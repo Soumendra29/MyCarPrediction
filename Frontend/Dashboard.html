@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Prediction Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>CarPredict</h2>
+    <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">New Prediction</a></li>
+        <li><a href="#">History</a></li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+    <div class="topbar">
+        <h1>Dashboard</h1>
+        <div class="profile">Welcome, User</div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+        <div class="card">
+            <h3>Total Predictions</h3>
+            <p id="totalPredictions">24</p>
+        </div>
+        <div class="card">
+            <h3>Average Price</h3>
+            <p>₹3,50,000</p>
+        </div>
+        <div class="card">
+            <h3>Most Predicted Brand</h3>
+            <p>Maruti</p>
+        </div>
+        <div class="card">
+            <h3>Model Accuracy</h3>
+            <p>89%</p>
+        </div>
+    </div>
+
+    <!-- Prediction Form -->
+    <div class="form-section">
+        <h2>Predict Car Price</h2>
+        <form id="predictionForm">
+            <input type="text" name="Car_Name" placeholder="Car Brand (e.g. Maruti)" required>
+            <input type="number" name="Year" placeholder="Year (e.g. 2018)" required>
+            <input type="number" name="Kms_Driven" placeholder="Kilometers Driven" required>
+            <select name="Owner" required>
+                <option value="">Select Owner</option>
+                <option value="First Owner">First Owner</option>
+                <option value="Second Owner">Second Owner</option>
+                <option value="Third Owner">Third Owner</option>
+                <option value="Fourth & Above Owner">Fourth & Above Owner</option>
+                <option value="Test Drive Car">Test Drive Car</option>
+            </select>
+            <select name="Fuel_Type" required>
+                <option value="">Fuel Type</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+                <option value="Electric">Electric</option>
+                <option value="LPG">LPG</option>
+            </select>
+            <select name="Seller_Type" required>
+                <option value="">Seller Type</option>
+                <option value="Individual">Individual</option>
+                <option value="Dealer">Dealer</option>
+                <option value="Trustmark Dealer">Trustmark Dealer</option>
+            </select>
+            <select name="Transmission" required>
+                <option value="">Transmission</option>
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+            <button type="submit">Predict Price</button>
+        </form>
+        <h3 id="result"></h3>
+    </div>
+
+    <!-- Table -->
+    <div class="table-section">
+        <h2>Recent Predictions</h2>
+        <table>
+            <tr>
+                <th>Brand</th>
+                <th>Year</th>
+                <th>Fuel</th>
+                <th>Predicted Price</th>
+            </tr>
+            <tr>
+                <td>Maruti Swift</td>
+                <td>2018</td>
+                <td>Petrol</td>
+                <td>₹4,50,000</td>
+            </tr>
+            <tr>
+                <td>Hyundai Creta</td>
+                <td>2019</td>
+                <td>Diesel</td>
+                <td>₹9,50,000</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-container">
+        <h2>Price Analytics</h2>
+        <canvas id="priceChart"></canvas>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="Dashboard.js"></script>
+</body>
+</html>

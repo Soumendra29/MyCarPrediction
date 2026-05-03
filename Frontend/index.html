@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyCarPrediction</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h2>MyCarPrediction</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="Dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Smart Car Pricing</span>
+        <h1>Predict Used Car Prices with Confidence</h1>
+        <p>Get fast, transparent valuations using real market data. MyCarPrediction analyzes fuel type, ownership history, mileage, and year to deliver instant pricing suggestions.</p>
+
+        <div class="hero-buttons">
+          <button class="btn btn-primary" onclick="goToPrediction()">Predict Now</button>
+          <a class="btn btn-secondary" href="#features">Explore Features</a>
+        </div>
+
+        <div class="hero-highlights">
+          <div class="highlight">
+            <span>01</span>
+            <div>
+              <strong>Instant Insights</strong>
+              <p>Smart pricing that reacts to real trends.</p>
+            </div>
+          </div>
+          <div class="highlight">
+            <span>02</span>
+            <div>
+              <strong>Modern UI</strong>
+              <p>Smooth animations for a premium experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="badge">Trusted by 1,200+ users</div>
+        <h3>Why MyCarPrediction?</h3>
+        <p>Our intelligent engine is built on real customer data and fine-tuned to estimate prices with strong predictive quality.</p>
+
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>0.93</strong>
+            <p>Model accuracy</p>
+          </div>
+          <div class="stat">
+            <strong>100k+</strong>
+            <p>Data points reviewed</p>
+          </div>
+          <div class="stat">
+            <strong>Fast</strong>
+            <p>Predicts in under a second</p>
+          </div>
+          <div class="stat">
+            <strong>Clear</strong>
+            <p>Easy inputs, instant results</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="section-intro">
+      <span>Features</span>
+      <h2>Built for smarter decisions</h2>
+      <p>From accurate valuations to a polished interface, everything is designed to make prediction simple and powerful.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Accurate Results</h3>
+        <p>Use industry-backed metrics to determine fair used car prices quickly.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Quick Workflow</h3>
+        <p>Submit a few key details and get a pricing prediction instantly.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Beautiful Interface</h3>
+        <p>Enjoy smooth animations and modern styling across the homepage.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="process">
+    <div class="process-grid">
+      <div class="process-step">
+        <span>01</span>
+        <h3>Enter Your Car Data</h3>
+        <p>Choose model, year, mileage and ownership details.</p>
+      </div>
+      <div class="process-step">
+        <span>02</span>
+        <h3>Generate Estimate</h3>
+        <p>Submit your details and receive a smart price estimate.</p>
+      </div>
+      <div class="process-step">
+        <span>03</span>
+        <h3>Make a smart choice</h3>
+        <p>Use the result to buy, sell, or negotiate with confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script>
+    function goToPrediction() {
+      window.location.href = "Predict.html";
+    }
+  </script>
+</body>
+</html>
