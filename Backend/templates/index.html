@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Predictor</title>
+    <style>
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #eff5ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #1f3254;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 32px 30px;
+            border-radius: 24px;
+            width: min(420px, calc(100% - 40px));
+            box-shadow: 0 30px 80px rgba(38, 75, 148, 0.12);
+            border: 1px solid rgba(49, 84, 166, 0.12);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 18px;
+            color: #0f2b55;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px 12px;
+            margin: 10px 0;
+            border-radius: 14px;
+            border: 1px solid rgba(15, 29, 56, 0.12);
+            background: #f5f8ff;
+            color: #1f3254;
+            font-size: 0.98rem;
+        }
+
+        select {
+            appearance: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 16px;
+            background: linear-gradient(135deg, #007bff, #00b6ff);
+            color: white;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 40px rgba(0, 118, 255, 0.2);
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 18px;
+            font-weight: 700;
+            color: #1f3254;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Car Price Predictor</h2>
+
+    <form action="/predict" method="post">
+
+        <!-- Car Name (Dropdown + Typing) -->
+        <input list="cars" name="Car_Name" placeholder="Car Model Name" required>
+        <datalist id="cars">
+            {% for car in car_names %}
+                <option value="{{ car }}">
+            {% endfor %}
+        </datalist>
+
+        <input type="number" name="Kms_Driven" placeholder="KM Driven" required>
+        <input type="number" name="Year" placeholder="Year" required>
+        <select name="Owner" required>
+            <option value="">Select Owner</option>
+            <option value="First Owner">First Owner</option>
+            <option value="Second Owner">Second Owner</option>
+            <option value="Third Owner">Third Owner</option>
+            <option value="Fourth & Above Owner">Fourth & Above Owner</option>
+            <option value="Test Drive Car">Test Drive Car</option>
+        </select>
+
+        <!-- Fuel -->
+        <select name="Fuel_Type">
+            {% for fuel in fuel_types %}
+                <option value="{{ fuel }}">{{ fuel }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Seller -->
+        <select name="Seller_Type">
+            {% for seller in seller_types %}
+                <option value="{{ seller }}">{{ seller }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Transmission -->
+        <select name="Transmission">
+            {% for t in transmissions %}
+                <option value="{{ t }}">{{ t }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    <div class="result">
+        {{ prediction_text }}
+    </div>
+
+</div>
+
+</body>
+</html>

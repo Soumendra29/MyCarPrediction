@@ -1,0 +1,8 @@
+{
+  "year": 2015,
+  "km_driven": 50000,
+  "owner": 1,
+  "fuel": "Petrol",
+  "seller_type": "Dealer",
+  "transmission": "Manual"
+}
