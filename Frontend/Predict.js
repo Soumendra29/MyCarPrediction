@@ -10,7 +10,7 @@ if (predictionForm) {
         resultDiv.style.color = "#0f2d59";
 
         const formData = new FormData(predictionForm);
-        const requestUrl = `http://127.0.0.1:8000/api/predict`;
+        const requestUrl = `https://mycarprediction.onrender.com/api/predict`;
 
         try {
             const response = await fetch(requestUrl, {
@@ -46,7 +46,7 @@ if (predictionForm) {
                 resultDiv.style.opacity = '1';
             }
         } catch (error) {
-            resultDiv.textContent = `Error: Backend server band hai! Pehle python Backend/app.py chalao.`;
+            resultDiv.textContent = `Error: Server not reachable!`;
             resultDiv.style.color = '#b32d2e';
             resultDiv.style.opacity = '1';
             console.error('Prediction request failed:', error);

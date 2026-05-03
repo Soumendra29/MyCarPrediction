@@ -1,4 +1,4 @@
-// ✅ Real API Prediction
+// Real API Prediction
 document.getElementById("predictionForm").addEventListener("submit", async function(e){
     e.preventDefault();
 
@@ -8,7 +8,7 @@ document.getElementById("predictionForm").addEventListener("submit", async funct
     const formData = new FormData(document.getElementById("predictionForm"));
 
     try {
-        const response = await fetch("http://127.0.0.1:8000/api/predict", {
+        const response = await fetch("https://mycarprediction.onrender.com/api/predict", {
             method: "POST",
             body: formData
         });
@@ -30,7 +30,7 @@ document.getElementById("predictionForm").addEventListener("submit", async funct
         }
 
     } catch (error) {
-        document.getElementById("result").innerText = "Error: Backend server band hai! Pehle python Backend/app.py chalao.";
+        document.getElementById("result").innerText = "Error: Server not reachable!";
         document.getElementById("result").style.color = "red";
     }
 });
