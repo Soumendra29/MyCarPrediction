@@ -6,7 +6,6 @@ form.addEventListener("submit", function(e){
     const email = document.getElementById("email");
     const password = document.getElementById("password");
 
-    // Click animation
     form.classList.add("clicked");
     setTimeout(()=> form.classList.remove("clicked"), 300);
 
@@ -15,12 +14,10 @@ form.addEventListener("submit", function(e){
         return;
     }
 
-    // Success animation
     successAnim();
 
-    
     setTimeout(()=>{
-        window.location.replace("http://127.0.0.1:8000/index.html");
+        window.location.replace("https://mycarprediction.onrender.com/index.html");
     }, 1200);
 
     function shake(el){
@@ -33,7 +30,6 @@ form.addEventListener("submit", function(e){
     }
 });
 
-/* Shake animation */
 const style = document.createElement('style');
 style.innerHTML = `
 @keyframes shake {
